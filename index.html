@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function reqListener() {
+        alert(this.responseText);
+      }
+
+      function openSigner() {
+        const req = new XMLHttpRequest();
+        req.addEventListener("load", reqListener);
+        req.open("POST", "http://localhost:31200/select-credentials");
+        req.send();
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="openSigner()">Click Me</button>
+  </body>
+</html>
